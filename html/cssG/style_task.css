@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+  }
+  body .sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: #9caf88;
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
+  }
+  .sidebar.active ~ .main-content{
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+  
+  .sidebar.active{
+    width: 250px;
+  }
+  .sidebar #btn {
+    position: absolute;
+    color: #fff;
+    top: .4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  
+  .sidebar.active #btn {
+    left: 90%;
+  }
+  
+  .sidebar .top .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+  }
+  
+  .sidebar.active .top .logo{
+    opacity: 1;
+  
+  }
+  
+  .top .logo i {
+    font-size: 2rem;
+    margin-right: 5px;
+  }
+  
+  .sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+  }
+  
+  .sidebar ul li a {
+    color: #fff;
+    display: text;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #000;
+  }
+  
+  .sidebar ul li a i {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+  
+  }
+  
+  .sidebar .nav--item {
+    opacity: 0;
+  
+  }
+  .sidebar.active .nav--item {
+    opacity: 1;
+    
+  }
+  
+  .sidebar ul li .tooltip {
+    position: absolute;
+    left: 125px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0.4rem 0.7rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.9rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    opacity: 0;
+  }
+  
+  .sidebar ul li:hover .tooltip {
+    opacity: 1;
+  }
+  
+  .sidebar.active ul li .tooltip {
+    display: none;
+  }
+  
+  .main-content {
+    position: relative;
+    background-color: #f7f4ef;
+    min-height: 100vh;
+    top: 0;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+    z-index: 1;
+  
+  }
+  
+  .main-content .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-content .container h1{
+    font-size: 45px;
+  }
+
+  .base-screen {
+    padding: 2rem 1rem;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+
+  }
+  #new-task-form {
+    display: flex;;
+  }
+  input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+  }
+  #new-task-input {
+    flex: 1 1 0%;
+    background-color: #fff;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: black;
+    font-size: 1rem;
+  }
+  #new-task-input::placeholder {
+    color: gray;
+  }
+
+  #new-task-submit {
+    color: blacks;
+    font-size: 1rem;
+    font-weight: 700;
+    background-image: black;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  #new-task-submit:hover {
+    opacity: 0.8;
+  }
+  #new-task-submit:active {
+    opacity: 0.6;
+  }
+
+  main {
+    flex: 1 1 0%;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .task-list {
+    padding: 1rem;
+  }
+  .task-list h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #9caf88;
+    margin-bottom: 1rem;
+  }
+  #tasks .task {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  .task .content {
+    flex: 1 1 0%;
+  }
+  
+  .task .content .text {
+    color: black;
+    font-size: 1rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+  }
+  
+  .task .content .text:not(:read-only) {
+    color: pink;
+  }
+  
+  .task .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+  }
+  
+  .task .actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: 0.4s;
+  }
+  
+  .task .actions button:hover {
+    opacity: 0.8;
+  }
+  
+  .task .actions button:active {
+    opacity: 0.6;
+  }
+  
+  .task .actions .edit {
+    color: #000;
+  }
+  
+  .task .actions .delete {
+    color: crimson;
+  }
